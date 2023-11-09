@@ -1,6 +1,10 @@
 ## Usage
 
 ```shell
+$ pip3 install -r requirements.txt
+```
+
+```shell
 $ python3 main.py test http://www.baidu.com/aaa.m3u8
 ```
 
