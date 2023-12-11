@@ -51,6 +51,8 @@ def main(file_name: str,
     cwd = os.getcwd()
     if output_dir == '':
         output_dir = f'{cwd}/download'
+        if not os.path.exists(output_dir):
+            os.mkdir(output_dir)
     else:
         if not os.path.exists(output_dir):
             os.mkdir(output_dir)
