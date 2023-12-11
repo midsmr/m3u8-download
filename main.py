@@ -38,8 +38,11 @@ def convert_to_mp4(ts_file_path, mp4_file_path):
     ex = subprocess.run(
         ['ffmpeg', '-i', ts_file_path, '-c', 'copy', mp4_file_path],
         capture_output=True,
-        shell=True
     )
+    if ex.returncode == 0:
+        typer.echo(ex.stdout.decode())
+    else:
+        typer.echo(ex.stderr.decode())
     os.remove(ts_file_path)
 
 
